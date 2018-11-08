@@ -19,3 +19,18 @@ The Teacher Match tool allows teachers to find and connect with other teachers. 
 
 ## Conclusion
 When we connect teachers, we create the future. Edulime will make this a reality. Getting started is easy: simply create an account at [http://eduli.me/](http://eduli.me/). You can also find out more about Edulime here: [https://youtu.be/Rmlkss6bMd4](https://youtu.be/Rmlkss6bMd4).
+
+# Instructions
+## Login Info
+1. Go to http://eduli.me/
+2. Access the login page by pressing the "Login" button in the top right. Enter the email and password provided to access the account. Feel free to explore before logging in if you wish.
+
+Email: hacc@hawaii.gov
+Password: 123
+
+## Method 2 (Not Recommended)
+Alternatively, you can choose to run the website locally:
+$ git clone https://github.com/HACC2018/Buffnblue.git
+$ npm install 
+$ gulp production
+$ npm run dev
