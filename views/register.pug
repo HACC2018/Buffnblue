@@ -1,0 +1,60 @@
+doctype html
+html(lang="en")
+	include includes/head.pug
+	body
+		section.hero.is-full-height
+			.hero-head
+				include includes/nav.pug
+			.hero-body
+				.container.has-text-centered
+					//- h1.title.is-1(style="padding-top: 1rem;") Register
+			.hero-foot
+		article.article.is-invisible
+			include includes/body.pug
+			//- +section("Bob")
+			section.hero
+				.hero-body.has-text-centered
+					h3.title Register
+					.container(style="max-width: 50vw;")
+						.columns
+							.column
+								.field: p.control
+									input.input(type="text", name="fname", placeholder="First Name")
+							.column
+								.field: p.control
+									input.input(type="text", name="lname", placeholder="Last Name")
+						.field: p.control
+							input.input(type="email", name="email", placeholder="Email")
+						.field: p.control
+							input.input(type="password", name="password", placeholder="Password")
+						.field: p.control
+							input.input(type="password", name="confirm", placeholder="Confirm Password")
+						br
+						br
+						.field: p.control
+							input.input(type="text", name="school", placeholder="School")
+						.has-text-left
+							.field.has-addons
+								p.control
+									a.button.is-static Department
+								p.control
+									.select.is-fullwidth: select(name="department")
+										option Math
+										option English
+										option Science
+										option Social Studies
+										option Music
+										option Physical Education
+						br
+						.field: p.control
+							input.input(type="text", name="subject", placeholder="Subject")
+						//- .field: p.control
+						//- 	input.input(type="text", name="hobbies", placeholder="Hobbies")
+						br
+						.field: p.control
+							button#submit.button.is-link Register
+						p#failedPasswordMessage.is-invisible(style="color: red;") Passwords do not match
+
+		//- Footer
+		include includes/footer.pug
+		div#pageName(data-pagename="register")

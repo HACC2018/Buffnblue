@@ -1,0 +1,88 @@
+doctype html
+html(lang="en")
+	include includes/head.pug
+	body
+		section.hero.is-full-height
+			.hero-head
+				include includes/nav.pug
+			.hero-body
+				.container.has-text-centered
+					//- h1.title.is-1(style="padding-top: 1rem;") Teacher Match
+			.hero-foot
+		section.hero.is-link.has-text-centered.newIntroText.is-actually-invisible
+			.hero-body: .container
+				h1.title Teacher Match
+				p The Teacher Match tool allows teachers to find and connect with other teachers. Profiles of similar teachers are shown by category. The ability to filter by department, subject, and/or school allows teachers to specify what type of teachers they are looking to network with.
+				br
+				a#teacherMatchIntroDontShowAgain.dontShowAgainButton.button.is-link.is-outlined.is-inverted Don't Show Again
+		section.hero.is-light.has-text-centered.introText.is-actually-invisible
+			.hero-body: .container
+				h2.subtitle Login or register to get started.
+				a.button.is-link.is-medium.is-outlined(href="/login.html" style="margin-right: 4rem;") Login
+				a.button.is-link.is-medium(href="/register.html") Register
+		article.article.is-paddingless
+			include includes/body.pug
+			include components.pug
+			section.section
+				.columns
+					.column
+						.box: .content
+							.has-text-centered: h1 Profile
+							p
+								span Name: #[span.myDetailsFName] #[span.myDetailsLName]
+								br
+								span School: #[span.myDetailsSchool]
+								br
+								span Department: #[span.myDetailsDepartment]
+								br
+								span Subject: #[span.myDetailsSubject]
+								br
+								//- span Hobbies: #[span.myDetailsHobbies]
+								//- br
+					.column
+						.level: .level-left: .level-item
+							.field.has-addons
+								p.control
+									input.input(type="search", name="search", placeholder="Find a teacher", style="width: 30vw;")
+								p.control
+									button.button.is-link Search
+
+			section.section
+				.columns
+					.column.is-one-quarter#teacherMatchFilter
+						//- Filter
+						.box(style="margin-top: 4rem;")
+							h3.title Filter
+							+teacherMatchFilter
+					.column#matchedTeachers
+						//- Colleagues
+						h1.title Colleagues in your Institution
+						.columns.is-multiline#sameSchool
+						//- 	.column.is-one-quarter: +teacherMatchTeacherCard("Bobady Bobo", "Bob School", "Math", "Calc BC", "https://upload.wikimedia.org/wikipedia/commons/e/eb/Cononut_milk.JPG")
+						//- 	.column.is-one-quarter: +teacherMatchTeacherCard("Bobady Bobo", "Bob School", "Math", "Calc BC", "https://upload.wikimedia.org/wikipedia/commons/e/eb/Cononut_milk.JPG")
+						//- 	.column.is-one-quarter: +teacherMatchTeacherCard("Bobady Bobo", "Bob School", "Math", "Calc BC", "https://upload.wikimedia.org/wikipedia/commons/e/eb/Cononut_milk.JPG")
+						//- 	.column.is-one-quarter: +teacherMatchTeacherCard("Bobady Bobo", "Bob School", "Math", "Calc BC", "https://upload.wikimedia.org/wikipedia/commons/e/eb/Cononut_milk.JPG")
+						//- Colleagues
+						h1.title(style="padding-top: 1.5rem;") Similar Teachers by Department
+						.columns.is-multiline#sameDepartment
+						//- 	.column.is-one-quarter: +teacherMatchTeacherCard("Bobady Bobo", "Bob School", "Math", "Calc BC", "https://upload.wikimedia.org/wikipedia/commons/e/eb/Cononut_milk.JPG")
+						//- 	.column.is-one-quarter: +teacherMatchTeacherCard("Bobady Bobo", "Bob School", "Math", "Calc BC", "https://upload.wikimedia.org/wikipedia/commons/e/eb/Cononut_milk.JPG")
+						//- 	.column.is-one-quarter: +teacherMatchTeacherCard("Bobady Bobo", "Bob School", "Math", "Calc BC", "https://upload.wikimedia.org/wikipedia/commons/e/eb/Cononut_milk.JPG")
+						//- 	.column.is-one-quarter: +teacherMatchTeacherCard("Bobady Bobo", "Bob School", "Math", "Calc BC", "https://upload.wikimedia.org/wikipedia/commons/e/eb/Cononut_milk.JPG")
+						//- Colleagues
+						h1.title(style="padding-top: 1.5rem;") Similar Teachers by Subject
+						.columns.is-multiline#sameSubject
+						//- 	.column.is-one-quarter: +teacherMatchTeacherCard("Bobady Bobo", "Bob School", "Math", "Calc BC", "https://upload.wikimedia.org/wikipedia/commons/e/eb/Cononut_milk.JPG")
+						//- 	.column.is-one-quarter: +teacherMatchTeacherCard("Bobady Bobo", "Bob School", "Math", "Calc BC", "https://upload.wikimedia.org/wikipedia/commons/e/eb/Cononut_milk.JPG")
+						//- 	.column.is-one-quarter: +teacherMatchTeacherCard("Bobady Bobo", "Bob School", "Math", "Calc BC", "https://upload.wikimedia.org/wikipedia/commons/e/eb/Cononut_milk.JPG")
+						//- 	.column.is-one-quarter: +teacherMatchTeacherCard("Bobady Bobo", "Bob School", "Math", "Calc BC", "https://upload.wikimedia.org/wikipedia/commons/e/eb/Cononut_milk.JPG")
+						//- 	.column.is-one-quarter: +teacherMatchTeacherCard("Bobady Bobo", "Bob School", "Math", "Calc BC", "https://upload.wikimedia.org/wikipedia/commons/e/eb/Cononut_milk.JPG")
+						//- h1.title(style="padding-top: 1.5rem;") Similar Teachers by Hobbies
+						//- .columns.is-multiline#sameHobbies
+			
+			.column.is-one-quarter#template.is-invisible: +teacherMatchTeacherCard("name", "School", "Department", "Subject", "https://upload.wikimedia.org/wikipedia/commons/e/eb/Cononut_milk.JPG")
+
+		//- Footer
+		include includes/footer.pug
+		div#pageName(data-pagename="teacherMatch")
+		//- div#myDetails

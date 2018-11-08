@@ -1,0 +1,34 @@
+doctype html
+html(lang="en")
+	include includes/head.pug
+	body
+		section.hero.is-full-height
+			.hero-head
+				include includes/nav.pug
+			.hero-body
+				.container.has-text-centered
+					//- h1.title.is-1(style="padding-top: 1rem;") Login
+			.hero-foot
+		article.article.is-invisible
+			include includes/body.pug
+			//- +section("Bob")
+			section.hero
+				.hero-body.has-text-centered
+					h3.title Login
+					.container(style="max-width: 50vw;")
+						.field: p.control.has-icons-left.has-icons-right
+							input.input(type="email", placeholder="Email")
+							span.icon.is-small.is-left
+								i.fas.fa-envelope
+						.field: p.control.has-icons-left
+							input.input(type="password", placeholder="Password")
+							span.icon.is-small.is-left
+								i.fas.fa-lock
+						br
+						.field: p.control
+							button#login.button.is-link Login
+						p#failedPasswordMessage.is-invisible(style="color: red;") The password and login that you entered do not match.
+
+		//- Footer
+		include includes/footer.pug
+		div#pageName(data-pagename="login")

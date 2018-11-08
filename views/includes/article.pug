@@ -1,0 +1,18 @@
+doctype html
+html(lang="en")
+	include includes/head.pug
+	body
+		section.hero.is-full-height
+			.hero-head
+				include includes/nav.pug
+			.hero-body
+				.container.has-text-centered
+					h1.title.is-1(style="padding-top: 1rem;") Template
+			.hero-foot
+		article.article
+			include includes/body.pug
+			+section("Bob")
+				| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab iusto, error officiis unde, at dolorum nemo facere! Quidem maiores, placeat, non ea commodi aliquid aspernatur, velit odio, rem adipisci quas.
+
+		//- Footer
+		include includes/footer.pug

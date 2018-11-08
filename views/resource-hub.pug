@@ -1,0 +1,171 @@
+doctype html
+html(lang="en")
+	include includes/head.pug
+	body
+		section.hero.is-full-height
+			.hero-head
+				include includes/nav.pug
+			.hero-body
+				.container.has-text-centered
+					//- h1.title.is-1(style="padding-top: 1rem;") Resource Hub
+			.hero-foot
+		section.hero.is-link.has-text-centered.newIntroText.is-actually-invisible
+			.hero-body: .container
+				h1.title The Resource Library
+				p The Resource Library is a powerful tool that allows teachers to upload and browse a multitude of lesson plans, worksheets, assignments, and other educational resources. Teachers can find their own uploaded files in their #[em Bookshelf]. Most notably, teachers can open a resource in the Innovation Board, allowing them to annotate and collaborate in real-time with other teachers.
+				br
+				a#resourceHubIntroDontShowAgain.dontShowAgainButton.button.is-link.is-outlined.is-inverted Don't Show Again
+		section.hero.is-light.has-text-centered.introText.is-actually-invisible
+			.hero-body: .container
+				h2.subtitle Login or register to get started.
+				a.button.is-link.is-medium.is-outlined(href="/login.html" style="margin-right: 4rem;") Login
+				a.button.is-link.is-medium(href="/register.html") Register
+		article.article.is-paddingless
+			include includes/body.pug
+			include components.pug
+
+			//- Quickview
+			#quickviewDefault.quickview
+				header.quickview-header
+					p.title Details
+					|		 
+					span.delete(data-dismiss="quickview")
+				.quickview-body
+					.quickview-block(style="padding: 2rem;")
+						h3.title.is-5 Comments
+						textarea.textarea(placeholder="Love this!")
+						br
+						button.button.is-link.is-outlined.resourceHubQuickviewPostCommentButton Post Comment
+				footer.quickview-footer
+			//- button.button.is-primary(data-show="quickview", data-target="quickviewDefault") Show quickview
+
+			//- Your Resource Bookshelf
+			section.section: .box
+				h2.title Your Resource Bookshelf
+				.tabs.is-centered
+					ul
+						li.resourceHubYourResourcesHeading.is-active: a
+								span.icon.is-small
+									i.fas.fa-book
+								span Unit Plans
+						li.resourceHubYourResourcesHeading: a
+								span.icon.is-small
+									i.fas.fa-film
+								span Lesson Assignments
+						li.resourceHubYourResourcesHeading: a
+								span.icon.is-small
+									i.far.fa-file-alt
+								span Worksheets
+						li.resourceHubYourResourcesHeading: a
+								span.icon.is-small
+									i.fas.fa-bookmark
+								span Miscellaneous
+				p.has-text-grey(style="padding-left: 3rem;") No resources uploaded yet! Try uploading one below.
+				br
+				h2.subtitle Upload New Resource
+				p: .field.has-addons
+					p.control
+						.file.has-name
+							label.file-label
+								input#resourceHubFileUploadInput.file-input(type="file", name="file")
+								span.file-cta
+									span.file-icon
+										i.fas.fa-upload
+									span.file-label Choose a file...
+								span#resourceHubFileUploadName.file-name No file selected
+					p.control: button#resourceHubFileUploadButton.button.is-link Upload
+				p#resourceHubFileUploadStatus.help.is-link
+
+			//- Banner
+			section.hero.is-paddingless
+				.hero-body.is-paddingless
+					.container.has-text-centered
+						h1.title.is-1.is-paddingless Resource Library
+
+			section.section
+				.columns
+					//- .column.is-one-quarter: .content
+					//- 	//- TODO: Filter
+					//- 	.box(style="margin-top: 4rem;")
+					//- 		h3 Filter
+					//- 		+resourceHubFilterByGrades
+					.column
+						//- Search
+						.level: .level-left: .level-item
+							.field.has-addons
+								p.control
+									input.input(type="search", name="search", placeholder="Find a resource", style="width: 35rem;")
+								p.control
+									button.button.is-link Search
+						.column
+						//- Resources List
+						h1.title(style="padding-top: 1.5rem;") Popular
+						.columns.is-multiline
+							.column.is-one-quarter: +resourceHubResourceCard("Animal Cell Organelle Biology Quiz", "https://i.pinimg.com/originals/15/43/e1/1543e1eb29d337543633d445c780b80e.jpg", "Rebecca Jim", 5)
+								span An organelle quiz for 8th grade biology students. 
+							.column.is-one-quarter: +resourceHubResourceCard("DNA Helix", "http://phsgirard.org/Biology/Genetics/DNA/DNAstructure.gif", "Peter Washington", 5)
+								span A simple DNA helix diagram with labeled nitrogeneous bases and bonds. 
+							.column.is-one-quarter: +resourceHubResourceCard("Worm Anatomy", "https://www.sierra-worm-compost.com/images/wormdiagram1000x750.jpg", "Celia Nakagawa", 5)
+								span A diagram showing the basic biology of a worm
+							.column.is-one-quarter: +resourceHubResourceCard("Beginners Spanish Student Worksheeth ", "https://d1a9cyuca1q7uc.cloudfront.net/images/screenshots/pdf-fill_in_the_blanks_screenshot.v.jpg", "Jacob Cisneros", 5)
+								span A fill-in-the blank worksheet for Spanish students
+						br
+						//- h1.title(style="padding-top: 1.5rem;") Trending
+						//- .columns.is-multiline
+							.column.is-one-quarter: +resourceHubResourceCard("Animal Cell Organelle Biology Quiz from Unit 4", "https://www.timvandevall.com/wp-content/uploads/Labeled-Microscope-Diagram.jpg", "Tim Park", 5)
+								span A simple microscope diagram for middle school biology students.
+							.column.is-one-quarter: +resourceHubResourceCard("Animal Cell Organelle Biology Quiz from Unit 4", "https://www.timvandevall.com/wp-content/uploads/Labeled-Microscope-Diagram.jpg", "Tim Park", 5)
+								span A simple microscope diagram for middle school biology students.
+							.column.is-one-quarter: +resourceHubResourceCard("Animal Cell Organelle Biology Quiz from Unit 4", "https://www.timvandevall.com/wp-content/uploads/Labeled-Microscope-Diagram.jpg", "Tim Park", 5)
+								span A simple microscope diagram for middle school biology students.
+							.column.is-one-quarter: +resourceHubResourceCard("Animal Cell Organelle Biology Quiz from Unit 4", "https://www.timvandevall.com/wp-content/uploads/Labeled-Microscope-Diagram.jpg", "Tim Park", 5)
+								span A simple microscope diagram for middle school biology students.
+						br
+						h1.title(style="padding-top: 1.5rem;") Recent Lesson Plans
+						.columns.is-multiline
+							.column.is-one-quarter: +resourceHubResourceCard("AP American History Essay Outline", "http://labelpropagation.info/dir/img/ap-us-history-lesson-plans-high-school-standard-essay-format-standard-ap-us-history-essay-format-doc-1129-1774.png", "Mary Slater", 5)
+								span Basic outline for APUSH papers to teach students how to organize their essays.
+							.column.is-one-quarter: +resourceHubResourceCard("7th Grade English Lesson Plans", "https://img.yumpu.com/39972322/1/358x507/english-lesson-plans-for-grade-7.jpg?quality=85", "Kim Lee", 4)
+								span English lesson plans for 7th grade students
+							.column.is-one-quarter: +resourceHubResourceCard("American History Boston Massacre Lesson", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVkyDjeAFDidK8TKOHYYMWC1vgFXH2TqZCfQ_mfyVwYOsWLeQZ", "Randy Ruth", 5)
+								span American history lesson for teaching about the Boston Massacre.
+							.column.is-one-quarter: +resourceHubResourceCard("Character Based Literacy Lesson Plans", "http://online.fliphtml5.com/dvwf/scox/files/large/1.jpg", "Laurel Wanton", 4)
+								span Lesson plans for teaching world history through character based literacy
+						br
+						h1.title(style="padding-top: 1.5rem;") Recent Lesson Assignments
+						.columns.is-multiline
+							.column.is-one-quarter: +resourceHubResourceCard("Famous Women in American History Assignment", "https://cdn.education.com/worksheet-image/248514/famous-women-history-fifth-grade.gif", "Mandy Rivers", 4)
+								span An assignment where students learn about important women in American history.
+							.column.is-one-quarter: +resourceHubResourceCard("Understanding Photosynthesis Assignment", "https://i.pinimg.com/originals/26/72/d7/2672d75f256223796f9f4cb69408c8f1.png", "Robert Patrick", 5)
+								span Simple labeling assignment to color and label the various parts involved with photosynthesis
+							.column.is-one-quarter: +resourceHubResourceCard("Muscular System", "http://myforgottencoast.com/wp-content/uploads/2018/06/muscular-system-diagram-labeled-beautiful-203-best-anatomy-amp-physiology-diagrams-amp-study-resources-images-on-of-muscular-system-diagram-labeled.jpg", "Tommy Tam", 4)
+								span Labeling muscular system assignment for students learning human anatomy.
+							.column.is-one-quarter: +resourceHubResourceCard("Plant Cell Labeling assignment", "https://kathleenhalme.com/images/cells-clipart-biology-teacher-4.jpg", "Riki Smith", 4)
+								span An assignment to label and explain the function of all the organelles in a plant cell.
+						br
+						h1.title(style="padding-top: 1.5rem;") Recent Lesson Worksheets
+						.columns.is-multiline
+							.column.is-one-quarter: +resourceHubResourceCard("Multiplication Worksheet for 2nd Grade students", "https://www.homeschoolmath.net/worksheets/grade3/images/multiplication-table-7.gif", "John Lee", 4)
+								span A simple multiplication worksheet for 2nd grade students.
+							.column.is-one-quarter: +resourceHubResourceCard("Anatomy Cardiovascular System Labeling", "https://i.pinimg.com/236x/62/3d/59/623d59669c1dd6e90ee0b708433a6674--human-body-systems-heart-anatomy-and-physiology.jpg", "Rebecca Smith", 4)
+								span A worksheet for students to practice labeling the main components of the heart.
+							.column.is-one-quarter: +resourceHubResourceCard("American History Timeline", "https://www.havefunteaching.com/wp-content/uploads/2015/02/history-worksheet-1.jpg", "Ronald Lee", 5)
+								span A worksheet for middle school students learning American history.
+							.column.is-one-quarter: +resourceHubResourceCard("American Colonies Labeling", "https://ecdn.teacherspayteachers.com/thumbitem/13-Colonies-Student-Worksheet-Map-1090290-1457222462/original-1090290-1.jpg", "Tony Wacker", 5)
+								span A worksheet for students to practice labeling the 13 colonies.
+						br
+						h1.title(style="padding-top: 1.5rem;") Recent Miscellaneous
+						.columns.is-multiline
+							.column.is-one-quarter: +resourceHubResourceCard("Periodic Table with Electronegativities", "https://chem.libretexts.org/@api/deki/files/78169/CK12_Screenshot_6-20-1.png?revision=1&size=bestfit&width=506&height=253", "Xavier Peterson", 4)
+								span A periodic table with the electronegativites for each element. Useful for chemistry students
+							.column.is-one-quarter: +resourceHubResourceCard("Microscope Diagram", "https://www.timvandevall.com/wp-content/uploads/Labeled-Microscope-Diagram.jpg", "Tim Park", 5)
+								span A simple microscope diagram for middle school biology students.
+							.column.is-one-quarter: +resourceHubResourceCard("Physics Honors 11th Grade Levers Diagram", "img/lever.png", "Timmy Slater", 4)
+								span Physics diagram for better understand the forces involved in a lever.
+							.column.is-one-quarter: +resourceHubResourceCard("Map of China", "https://geology.com/world/china-map.gif", "Caitlyn Chang", 4)
+								span A simple map of China for students learning about Chinese geography.
+							
+
+		//- Footer
+		include includes/footer.pug
+		div#pageName(data-pagename="resourceHub")

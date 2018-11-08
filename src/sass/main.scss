@@ -1,0 +1,133 @@
+// Override Bulma vars here. Use https://bulma.io/documentation/overview/colors/, not Bulma vars.
+// $primary: hsl(217, 71%, 53%);
+$link: rgb(121, 196, 25);
+$primary: rgb(161, 249, 28);
+$info: rgb(175, 215, 12);
+// rgb(230, 250, 160), rgb(0, 0, 0)
+@import "./node_modules/bulma/bulma.sass";
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
+
+body {
+	font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+	
+	h1, h2, h3, h4, h5, h6 {
+		font-family: "Roboto", "Source Sans Pro", Helvetica, Arial, sans-serif;
+	}
+}
+
+.blurredElement {
+	-webkit-filter: blur(3px);
+	-moz-filter: blur(3px);
+	-ms-filter: blur(3px);
+	-o-filter: blur(3px);
+	filter: blur(3px); 
+}
+
+.quickview {
+	z-index: 110!important;
+}
+
+.star-checked {
+	color: orange;
+}
+
+.navbar {
+	background-color: rgba(255, 255, 255, 1.0) !important;
+}
+
+.is-actually-invisible {
+	display: none;
+}
+
+#boardContainer {
+	position: relative;
+	width: 80vw;
+	height: 100vh;
+	margin-left: 10vw;
+	margin-top: 5vh;
+}
+
+#canvasContainer {
+	position: absolute;
+	right: 0;
+	left: 0;
+	margin: 0 auto;
+	width: 80%;
+	height: 80%;
+	z-index: 2;
+}
+
+#canvasContainer:hover {
+	cursor: crosshair;
+}
+
+#overlay {
+	position: absolute;
+	right: 0;
+	left: 0;
+	margin: 0 auto;
+	width: 80%;
+	height: 80%;
+	z-index: -100;
+	// background-image: url(https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto/gigs/3484694/original/20121024-092756/do-your-math-homework.jpg);
+	// background-size: contain;
+	// background-repeat: no-repeat;
+	// background-position: center center;
+	overflow: hidden;
+	text-align: center;
+}
+
+#overlayImg {
+	// margin: -200px;
+	max-height: 100%;
+}
+
+#colorPalette {
+	margin-top: 2vh;
+}
+
+#toolBar {
+	position: absolute;
+	bottom: 0;
+	 right: 0;
+	left: 0;
+	margin: 0 auto;
+	width: 80%;
+	height: 20%;
+}
+
+// .innovationBoardColor {
+// 	margin: 0;
+// 	display: none;
+// 	width: 0;
+// }
+
+// .innovationBoardColor:checked + label::after {
+// 	content:'\2712';
+// 	position: absolute;
+// 	left: 8px;
+// }
+
+.innovationBoardLabels {
+	display: inline-block; 
+	width: 48px; 
+	height: 48px; 
+	position: relative;
+	padding-right: 5px;
+	border-radius: 50%;
+	text-shadow: 1px 1px 2px #000;
+	color: #fff;
+	font-size: 32px;
+	line-height: 46px;
+	-webkit-border-radius: 12px; 
+	-moz-border-radius: 12px; 
+	border-radius: 12px; 
+	border: 1px solid #000;
+}
+
+label[for=color01] {background: gold;}
+label[for=color02] {background: darkorange;}
+label[for=color03] {background: navy;}
+label[for=color04] {background: yellowgreen;}
+label[for=color05] {background: firebrick;}
+label[for=color06] {background: white;}

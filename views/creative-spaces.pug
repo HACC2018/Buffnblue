@@ -1,0 +1,216 @@
+doctype html
+html(lang="en")
+	include includes/head.pug
+	body
+		section.hero.is-full-height
+			.hero-head
+				include includes/nav.pug
+			.hero-body
+				.container.has-text-centered
+					//- h1.title.is-1(style="padding-top: 1rem;") Creative Spaces
+			.hero-foot
+		section.hero.is-link.has-text-centered.newIntroText.is-actually-invisible(style="margin-bottom: 3rem;")
+				.hero-body: .container
+					h1.title Creative Spaces
+					p The Creative Spaces tool is a growing directory of physical places such as coffee shops, libraries, and coworking spaces where educators can work together. They can also meet with other educators at these locations to collaborate, discuss, and co-create lesson plans. Direct face-to-face communication fosters stronger networks between various teachers from different schools, departments, and subjects.
+					br
+					a#creativeSpacesIntroDontShowAgain.dontShowAgainButton.button.is-link.is-outlined.is-inverted Don't Show Again
+		article.article.is-paddingless
+			include includes/body.pug
+			section.section.is-paddingless
+				#map(style="height: 70vh;")
+		//- Footer
+		include includes/footer.pug
+		div#pageName(data-pagename="creativeSpaces")
+
+		//- Google maps
+		script(async, defer, type="text/javascript", src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB77nR_TKpRV6CJ_B5kgqOzK8NshI61AhI&callback=initMap")
+		//- https://stackoverflow.com/questions/3059044/google-maps-js-api-v3-simple-multiple-marker-example
+		//- http://www.zonums.com/online/coords/cotrans.php?module=11
+		script.
+			function initMap () {
+				//- var clchCoordinates = {lat: 21.322523, lng: -157.859298};
+				//- var map = new google.maps.Map($("#map")[0], {
+				//- 	zoom: 12,
+				//- 	center: new google.maps.LatLng(59.0, 13.80)
+				//- });
+
+				//- var marker1 = new google.maps.Marker({
+				//- 	position: clchCoordinates,
+				//- 	map: map,
+				//- 	title: "bob"
+				//- });
+
+				//- var marker2 = new google.maps.Marker({
+				//- 	position: {lat: 21.329523, lng: -157.859298},
+				//- 	map: map,
+				//- 	title: "bob"
+				//- });
+				// Create a new instance of the MarkerManager
+				
+				//- var locations = [
+				//- 		['Bondi Beach', -33.890542, 151.274856, 4],
+				//- 		['Coogee Beach', -33.923036, 151.259052, 5],
+				//- 		['Cronulla Beach', -34.028249, 151.157507, 3],
+				//- 		['Manly Beach', -33.80010128657071, 151.28747820854187, 2],
+				//- 		['Maroubra Beach', -33.950198, 151.259302, 1]
+				//- 	];
+
+				var locationNames = [
+					"Starbucks, 678 Keeaumoku St #106, Honolulu, HI 96814",
+					"Starbucks, 1450 Ala Moana Blvd, Honolulu, HI 96814",
+					"Starbucks, 1450 Ala Moana Blvd #6516, Honolulu, HI 96814",
+					"Starbucks, 410 Atkinson Dr, Honolulu, HI 96814",
+					"Starbucks, 2005 Kalia Rd, Honolulu, HI 96815",
+					"Starbucks, 2169 Kalia Rd, Honolulu, HI 96815",
+					"Starbucks, 2201 Kalakaua Ave, Honolulu, HI 96815",
+					"Starbucks, 2255 Kūhiō Ave, Honolulu, HI 96815",
+					"Starbucks, 900 Kapahulu Ave, Honolulu, HI 96816",
+					"Starbucks, 2465 Campus Rd #220, Honolulu, HI 96822",
+					"Starbucks, 2902 E Manoa Rd, Honolulu, HI 96822",
+					"Starbucks, 1025 Alakea Street 10, Honolulu, HI 96813",
+					"Starbucks, 130 Merchant St #111, Honolulu, HI 96813",
+					"Starbucks, 1000 Bishop St #104, Honolulu, HI 96813",
+					"Starbucks, 310 Kamakee St #6, Honolulu, HI 96814",
+					"Starbucks, 949 Auahi St, Honolulu, HI 96814",
+					"Starbucks, 1234 S Beretania St, Honolulu, HI 96814",
+					"Starbucks Kahala Drive-Thru 4722-4762 Kilauea Ave, Honolulu, HI 96816",
+					"Starbucks, 4211 Waialae Ave, Honolulu, HI 96816",
+					"Starbucks, 4211 Waialae Ave Building R, Honolulu, HI 96816",
+					"Starbucks, 820 W Hind Dr #1292, Honolulu, HI 96821",
+					"Starbucks, 333 Keahole St, Honolulu, HI 96825",
+					"Starbucks, 7192 Kalanianaʻole Hwy #C112, Honolulu, HI 96825",
+					"Starbucks, 98125 Kaonohi St, Aiea, HI 96701",
+					"Starbucks, 98-1005 Moanalua Rd, Aiea, HI 96701",
+					"Starbucks, 4561 Salt Lake Blvd, Honolulu, HI 96818",
+					"Starbucks, Honolulu, HI 96819",
+					"Starbucks, 300 Rodgers Blvd, Honolulu, HI 96819",
+					"Starbucks, 550 Paiea St, Honolulu, HI 96819",
+					"Starbucks, 1 Jarrett White Rd, Honolulu, HI 96859",
+					"Starbucks, 1620 N School St #131, Honolulu, HI 96817",
+					"Starbucks, 130 Merchant St #111, Honolulu, HI 96813",
+					"Starbucks, 345 Hahani St, Kailua, HI 96734",
+					"Starbucks, 45-480 Kaneohe Bay Dr, Kaneohe, HI 96744",
+					"Starbucks, 6477, Mokapu Mall, B117, Kailua, HI 96734",
+					"Starbucks, 539 Kailua Rd, Kailua, HI 96734",
+					"Starbucks, 91-1105 Keaunui Dr #500, Ewa Beach, HI 96706",
+					"Starbucks, Hickam AFB Bldg. B-1250, Hickam Field, HI 96853",
+					"Starbucks, 98-1277 Kaahumanu St #7, Aiea, HI 96701",
+					"Starbucks, A, 1029 Makolu St, Pearl City, HI 96782",
+					"Starbucks, 94-799 Lumiaina St, Waipahu, HI 96797",
+					"Starbucks, 3, 94-050 Farrington Hwy e1, Waipahu, HI 96797",
+					"Starbucks, 4510 Salt Lake Blvd D5, Honolulu, HI 96818",
+					"Starbucks, 1020 Keolu Dr c10, Kailua, HI 96734",
+					"Waikiki-Kapahulu Public Library, 400 Kapahulu Ave, Honolulu, HI 96815",
+					"McCully-Moiliili Public Library, 2211 S King St, Honolulu, HI 96826",
+					"Thomas Hale Hamilton Library, 2550 McCarthy Mall, Honolulu, HI 96822",
+					"Family History Center, Honolulu, HI 96814",
+					"Liliha Public Library, 1515 Liliha St, Honolulu, HI 96817",
+					"Honolulu Community College Library, 874 Dillingham Blvd, Honolulu, HI 96817",
+					"Salt Lake-Moanalua Public Library, 3225 Salt Lake Blvd, Honolulu, HI 96818",
+					"Aiea Public Library, 99-374 Pohai Pl, Aiea, HI 96701",
+					"Pearl City Public Library, 1138 Waimano Home Rd, Pearl City, HI 96782",
+					"Leeward Community College Library, 96 Ala Ike, Pearl City, HI 96782",
+					"’Ewa Beach Public Library, 91-950 N Rd, Ewa Beach, HI 96706",
+					"Mililani Public Library, 95-450 Makaimoimo St, Mililani, HI 96789",
+					"Mililani High School Library, 95-1200 Meheula Parkway, Meheula Pkwy, Mililani, HI 96789",
+					"Sergeant Rodney J. Yano Library, 1565 Kolekole Ave, Schofield Barracks, HI 96857",
+					"Wahiawā Public Library, 820 California Ave, Wahiawa, HI 96786",
+					"Kaneohe Public Library, 45-829 Kamehameha Hwy, Kaneohe, HI 96744",
+					"Lama Library, 4303 Diamond Head Rd, Honolulu, HI 96816",
+					"Waikīkī-Kapahulu Public Library, 402 Kapahulu Ave, Honolulu, HI 96815",
+					"Makiki Public Library, Honolulu, HI 96822",
+					"Ninth Circuit Library, 300 Ala Moana Blvd # C341, Honolulu, HI 96850",
+					"Hawaii State Public Library, 478 S King St, Honolulu, HI 96813"
+				];
+				var locationLatLngs = [
+					[21.294583, -157.842222],
+					[21.292333, -157.842528],
+					[21.291222, -157.843306],
+					[21.290167, -157.839778],
+					[21.284, -157.835972],
+					[21.278778, -157.832528],
+					[21.279556, -157.830222],
+					[21.279861, -157.826972],
+					[21.283917, -157.814722],
+					[21.298333, -157.818833],
+					[21.309889, -157.810417],
+					[21.308056, -157.860194],
+					[21.308222, -157.86225],
+					[21.308861, -157.861278],
+					[21.293889, -157.853222],
+					[21.295639, -157.856278],
+					[21.301972, -157.842167],
+					[21.27725, -157.784917],
+					[21.277556, -157.786806],
+					[21.277639, -157.786889],
+					[21.278917, -157.753],
+					[21.283306, -157.710806],
+					[21.277222, -157.705528],
+					[21.383722, -157.944917],
+					[21.385417, -157.941667],
+					[21.366444, -157.930111],
+					[21.3305, -157.923278],
+					[21.33, -157.920028],
+					[21.335917, -157.91575],
+					[21.359889, -157.88975],
+					[21.33575, -157.868139],
+					[21.30825, -157.86225],
+					[21.391417, -157.739667],
+					[21.401861, -157.799111],
+					[21.444083, -157.744361],
+					[21.393472, -157.740694],
+					[21.327556, -158.02125],
+					[21.342222, -157.951472],
+					[21.389111, -157.952722],
+					[21.399278, -157.974139],
+					[21.399556, -158.006861],
+					[21.377417, -158.025889],
+					[21.355167, -157.929139],
+					[21.378444, -157.728889],
+					[21.274361, -157.816694],
+					[21.293639, -157.827722],
+					[21.30075, -157.81625],
+					[21.299444, -157.836389],
+					[21.320667, -157.860361],
+					[21.321917, -157.870806],
+					[21.343222, -157.912583],
+					[21.380722, -157.927583],
+					[21.397, -157.969361],
+					[21.392667, -157.98375],
+					[21.314917, -158.008361],
+					[21.452, -158.008556],
+					[21.453972, -158.00925],
+					[21.489167, -158.055972],
+					[21.497556, -158.026472],
+					[21.412778, -157.79925],
+					[21.271556, -157.800139],
+					[21.274861, -157.816972],
+					[21.303917, -157.836806],
+					[21.30425, -157.862278],
+					[21.305806, -157.857611]
+				];
+
+				var map = new google.maps.Map($("#map")[0], {
+					zoom: 12,
+					center: new google.maps.LatLng(21.405806, -157.857611),
+					mapTypeId: google.maps.MapTypeId.ROADMAP
+				});
+
+				var infowindow = new google.maps.InfoWindow();
+				var marker, i;
+
+				for (i = 0; i < locationLatLngs.length; i++) {	
+					marker = new google.maps.Marker({
+						position: new google.maps.LatLng(locationLatLngs[i][0], locationLatLngs[i][1]),
+						map: map
+					});
+
+					google.maps.event.addListener(marker, 'click', (function(marker, i) {
+						return function() {
+							infowindow.setContent(locationNames[i]);
+							infowindow.open(map, marker);
+						}
+					})(marker, i));
+				}
+			}

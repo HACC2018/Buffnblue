@@ -1,0 +1,66 @@
+doctype html
+html(lang="en")
+	include includes/head.pug
+	body
+		nav.navbar(style="width: 100%; position: fixed; z-index: 300; background: none!important; margin: 0.5rem;")
+			.navbar-brand
+				a.navbar-item(href="/index.html")
+					img(src="/img/logo.png")
+			.navbar-menu
+				.navbar-start
+					a.navbar-item(href="/resource-hub.html")
+						button.button.is-small.is-link.is-rounded Exit
+		article.article.is-paddingless
+			include includes/body.pug
+			section.section.is-paddingless
+				.columns
+					.column.innovationBoardLeftColumn.is-invisible(style="padding: 3rem 1rem; position: fixed; width: 20vw; z-index: 100;")
+						#toolBar
+							br
+							strong Colors
+							#colorPalette
+								button.button.is-rounded.is-active.innovationBoardColor(data-color="red", style="background-color: red; border: none;") &nbsp;
+								span &nbsp;
+								button.button.is-rounded.innovationBoardColor(data-color="orange", style="background-color: orange; border: none;") &nbsp;
+								span &nbsp;
+								button.button.is-rounded.innovationBoardColor(data-color="green", style="background-color: green; border: none;") &nbsp;
+								span &nbsp;
+								button.button.is-rounded.innovationBoardColor(data-color="blue", style="background-color: blue; border: none;") &nbsp;
+								span &nbsp;
+								button.button.is-rounded.innovationBoardColor(data-color="purple", style="background-color: purple; border: none;") &nbsp;
+
+								//- input#color0.innovationBoardColor(type='radio', name='color', data-color='gold', checked='')
+								//- label.innovationBoardLabels(for='color01')
+								//- input#color02.innovationBoardColor(type='radio', name='color', data-color='darkorange')
+								//- label.innovationBoardLabels(for='color02')
+								//- input#color03.innovationBoardColor(type='radio', name='color', data-color='navy')
+								//- label.innovationBoardLabels(for='color03')
+								//- input#color04.innovationBoardColor(type='radio', name='color', data-color='yellowgreen')
+								//- label.innovationBoardLabels(for='color04')
+								//- input#color05.innovationBoardColor(type='radio', name='color', data-color='firebrick')
+								//- label.innovationBoardLabels(for='color05')
+								//- input#color06.innovationBoardColor(type='radio', name='color', data-color='white')
+									//- label.innovationBoardLabels(for='color06')
+								br
+								br
+								//- button.button.is-dark.is-outlined.innovationBoardColor(data-color="white") Eraser
+							- for (var x = 0; x < 4; x++)
+								br
+							strong Thickness
+							input#lineSize.slider.is-fullwidth.is-link.is-circle(type="range", step="1", min="3", max="30", value="3")
+					.column
+						#boardContainer
+							#canvasContainer.box(style="background: none;")
+								canvas#drawCanvas(style="margin: -1.5rem;") Canvas is not supported on this browser!
+							#overlay
+								img#overlayImg
+					.column(style="margin: 5vh 3vw; position: fixed; width: 14vw; right: 0;")
+						strong Current Viewers:
+						br
+						br
+						#connectedClients
+
+		//- Footer
+		script(src="//cdn.pubnub.com/pubnub-3.14.1.min.js")
+		include includes/footer.pug
+		div#pageName(data-pagename="innovationBoard")

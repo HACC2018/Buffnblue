@@ -1,0 +1,124 @@
+mixin teacherMatchFilter
+	label.checkbox.is-unselectable
+		input(type="checkbox" value="department")
+		span &nbsp; Same Department
+	br
+	label.checkbox.is-unselectable
+		input(type="checkbox" value="subject")
+		span &nbsp; Same Subject
+	br
+	label.checkbox.is-unselectable
+		input(type="checkbox" value="school")
+		span &nbsp; Same School
+	br
+	//- label.checkbox.is-unselectable
+	//- 	input(type="checkbox" value="hobbies")
+	//- 	span &nbsp; Same Hobbies
+	//- br
+	//- label.checkbox.is-unselectable
+	//- 	input(type="checkbox" value="school")
+	//- 	span &nbsp; Looking to Collaborate
+
+mixin teacherMatchTeacherCard(teacherName, teacherSchool, teacherDepartment, teacherSubject, teacherProfilePicUrl)
+	.card
+		header.card-header
+			p.card-header-title= teacherName
+		.card-content
+			.level: .level-item.has-text-centered
+				figure.image.is-96x96
+					img(src=teacherProfilePicUrl)
+			span: strong= teacherSchool
+			br
+			span= teacherDepartment
+			br
+			span= teacherSubject
+			.content
+				block
+		footer.card-footer.has-text-centered
+			a.card-footer-item(href="javascript:alert('Feature coming soon!');") View profile
+			a.card-footer-item(href="javascript:alert('Feature coming soon!');") Connect
+
+mixin resourceHubFilterByGrades
+	.columns
+		.column
+			label.checkbox.is-unselectable
+				input(type="checkbox")
+				span &nbsp; PreK
+			br
+			label.checkbox.is-unselectable
+				input(type="checkbox")
+				span &nbsp; K
+			br
+			label.checkbox.is-unselectable
+				input(type="checkbox")
+				span &nbsp; 1st Grade
+			br
+			label.checkbox.is-unselectable
+				input(type="checkbox")
+				span &nbsp; 2nd Grade
+			br
+			label.checkbox.is-unselectable
+				input(type="checkbox")
+				span &nbsp; 3rd Grade
+			br
+			label.checkbox.is-unselectable
+				input(type="checkbox")
+				span &nbsp; 4th Grade
+			br
+			label.checkbox.is-unselectable
+				input(type="checkbox")
+				span &nbsp; 5th Grade
+		.column
+			label.checkbox.is-unselectable
+				input(type="checkbox")
+				span &nbsp; 6th Grade
+			br
+			label.checkbox.is-unselectable
+				input(type="checkbox")
+				span &nbsp; 7th Grade
+			br
+			label.checkbox.is-unselectable
+				input(type="checkbox")
+				span &nbsp; 8th Grade
+			br
+			label.checkbox.is-unselectable
+				input(type="checkbox")
+				span &nbsp; 9th Grade
+			br
+			label.checkbox.is-unselectable
+				input(type="checkbox")
+				span &nbsp; 10th Grade
+			br
+			label.checkbox.is-unselectable
+				input(type="checkbox")
+				span &nbsp; 11th Grade
+			br
+			label.checkbox.is-unselectable
+				input(type="checkbox")
+				span &nbsp; 12th Grade
+			br
+
+mixin resourceHubResourceCard(resourceName, cardImgUrl, authorUsername, rating)
+	.card
+		header.card-header
+			p.card-header-title= resourceName
+		.card-image
+			figure.image.is-4by3
+				img.resourceCardCoverImage(src=cardImgUrl)
+		.card-content
+			.columns
+				//- .column.is-one-quarter
+				//- 	figure.image.is-48x48
+				//- 		img(src=authorProfilePicUrl)
+				.column
+					span By #{authorUsername}
+					p
+						- for (var x = 0; x < rating; x++)
+							span.fa.fa-star.star-checked
+						- for (var x = rating; x < 5; x++)
+							span.fa.fa-star
+			.content
+				block
+		footer.card-footer.has-text-centered
+			a.card-footer-item.openQuickviewPanel(data-show="quickview", data-target="quickviewDefault") View details
+			a.card-footer-item.openInInnovationBoardButton Open in Innovation Board

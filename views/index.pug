@@ -1,0 +1,47 @@
+mixin heroDownArrow
+	.hero-foot.has-text-centered(style="margin: 2rem;")
+		+icon("fa-angle-down fa-2x", "is-large")
+
+doctype html
+html(lang="en")
+	include includes/head.pug
+	body
+		section.hero.is-full-height
+			.hero-head
+				include includes/nav.pug
+			.hero-body
+				.container.has-text-centered
+					h1.title.is-1(style="padding-top: 1rem;") edu
+						span.has-text-link Lime
+			.hero-foot
+		article.article.is-invisible
+			include includes/body.pug
+			section.hero.is-link.is-medium
+				.hero-body: .container
+					h1.title The Problem
+					h2.subtitle Teachers lack a proper teacher-to-teacher network that enables collaboration between those in different fields, schools, and teaching experience.
+					p Hawaii’s education system has yet to attain an inclusive, high-quality education for all students. With the rapidly-changing workforce ahead of new generations, teachers must provide their students with the knowledge they need to thrive and build a sustainable future for Hawai’i. Powerful teacher-to-teacher networks enable teachers in Hawaii to develop and utilize lesson plans that promote learner-oriented lifelong learning.
+				+heroDownArrow
+			section.hero.is-white.is-medium.has-text-centered
+				.hero-body: .container
+					h1.title The Mission
+					h2.subtitle Meet #[span.has-text-link eduLime], a collaborative network hub for educators that promotes transformational learning, as well as a collection of the best tools to support them. The platform allows teachers from any school to connect with other teachers to share, find, and annotate educational resources.
+				+heroDownArrow
+			section.hero.is-info.is-medium.has-text-right
+				.hero-body: .container
+					h1.title The Vision
+					h2.subtitle Edulime makes it easy for teachers to create engaging and effective lessons that foster equitable access to education and provide teachers with useful and practical tools to revolutionize the way they teach.
+				+heroDownArrow
+			section.section.hero.is-white.has-text-centered
+				.hero-body: .container
+					h5.title.is-5 When we connect teachers, we create the future.
+			section.hero.is-light.is-medium.has-text-centered.introText.is-actually-invisible
+				.hero-body: .container
+					h1.title Get Started Today
+					a.button.is-medium.is-link(href="/register.html", style="margin-top: 1rem;") Register
+			section.section.hero.is-white.has-text-centered
+				.hero-body: .container: .content
+					p.has-text-left You can also find out more about Edulime here: #[a.has-text-link(href="https://youtu.be/Rmlkss6bMd4") https://youtu.be/Rmlkss6bMd4].
+		//- Footer
+		include includes/footer.pug
+		div#pageName(data-pagename="index")

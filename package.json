@@ -1,0 +1,57 @@
+{
+	"name": "eduLime",
+	"version": "1.0.0",
+	"description": "A digital solution for realtime educational and innovative collaboration.",
+	"homepage": "https://github.com/Firebird1029/HACC2018",
+	"bugs": {
+		"url": "https://github.com/Firebird1029/HACC2018/issues",
+		"email": "brandon.yee150@gmail.com"
+	},
+	"license": "MIT",
+	"author": "Brandon Yee <brandon.yee150@gmail.com> (https://github.com/Firebird1029)",
+	"contributors": [
+		"Jason Tay <jtay20@punahou.edu> (https://github.com/jason2020)"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Firebird1029/HACC2018.git"
+	},
+	"main": "index.js",
+	"engines": {
+		"node": "^8.2.0"
+	},
+	"scripts": {
+		"start": "node index.js",
+		"dev": "nodemon --ignore 'models/*.json'",
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"postinstall": "gulp production"
+	},
+	"dependencies": {
+		"babel-core": "^6.26.0",
+		"bulma": "^0.7.1",
+		"bulma-extensions": "^3.0.0",
+		"express": "^4.15.3",
+		"fs": "0.0.1-security",
+		"helmet": "^3.14.0",
+		"lodash": "^4.17.11",
+		"npm": "^6.1.0",
+		"pug": "^2.0.0-rc.3",
+		"pug-static": "^1.0.1",
+		"socket.io": "^2.0.3"
+	},
+	"devDependencies": {
+		"babel-preset-es2015": "^6.24.1",
+		"browser-sync": "^2.18.13",
+		"eslint": "^5.0.0",
+		"gulp": "^3.9.1",
+		"gulp-autoprefixer": "^5.0.0",
+		"gulp-babel": "^7.0.1",
+		"gulp-concat": "^2.6.1",
+		"gulp-cssmin": "^0.2.0",
+		"gulp-load-plugins": "^1.5.0",
+		"gulp-nodemon": "^2.2.1",
+		"gulp-sass": "^4.0.1",
+		"gulp-sourcemaps": "^2.6.0",
+		"gulp-uglify": "^3.0.0"
+	}
+}

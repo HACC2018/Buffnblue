@@ -1,0 +1,167 @@
+{
+	"e76a4251-a38f-49bb-b62f-e729042bc0eb": {
+		"fname": "Maya",
+		"lname": "Monica",
+		"email": "mmonica@gmail.com",
+		"password": "123",
+		"department": "English",
+		"subject": "Short Story",
+		"school": "Dallas High School",
+		"hobbies": "Hunting",
+		"time": 1541571370
+	},
+	"0ea97260-003b-4871-ab61-7f71f059c3eb": {
+		"fname": "James",
+		"lname": "Robertson",
+		"email": "jroberts@gmail.com",
+		"password": "123456789",
+		"department": "Math",
+		"subject": "Alg 1",
+		"school": "Connecticut High School",
+		"hobbies": "Surfing",
+		"time": 1541571368
+	},
+	"584f25ef-6e63-4658-a42e-0ace331d682a": {
+		"fname": "Samantha",
+		"lname": "Lee",
+		"email": "slee@gmail.com",
+		"password": "123",
+		"department": "Science",
+		"subject": "Biology",
+		"school": "Connecticut High School",
+		"hobbies": "Fishing",
+		"time": 1541571369
+	},
+	"a26b2253-a38f-49ea-b62f-e729048ec0eb": {
+		"fname": "Rebecca",
+		"lname": "Morgan",
+		"email": "rmorgan@gmail.com",
+		"password": "123",
+		"department": "English",
+		"subject": "Short Story",
+		"school": "Dallas High School",
+		"hobbies": "Surfing",
+		"time": 1541571371
+	},
+	"6e6a4251-a38f-49bb-b62f-e729042bc0eb": {
+		"fname": "Peter",
+		"lname": "Lum",
+		"email": "plum@gmail.com",
+		"password": "123",
+		"department": "Science",
+		"subject": "Chemistry",
+		"school": "Dallas High School",
+		"hobbies": "Reading",
+		"time": 1541571372
+	},
+	"1fe64251-e38f-49cb-b72f-e729142bc0eb": {
+		"fname": "John",
+		"lname": "Adams",
+		"email": "jadams@gmail.com",
+		"password": "123",
+		"department": "Science",
+		"subject": "Chemistry",
+		"school": "Dallas High School",
+		"hobbies": "Reading",
+		"time": 1541571372
+	},
+	"2a8a4e51-23ef-68bb-e63f-e749042bc0eb": {
+		"fname": "George",
+		"lname": "Smith",
+		"email": "gsmith@gmail.com",
+		"password": "123",
+		"department": "Science",
+		"subject": "Biology",
+		"school": "Florida High School",
+		"hobbies": "Cooking",
+		"time": 1541571373
+	},
+	"e2eb53a2-a38f-49bb-b62f-e56904abc0fb": {
+		"fname": "Lily",
+		"lname": "Reed",
+		"email": "lreed47@gmail.com",
+		"password": "123",
+		"department": "Social Studies",
+		"subject": "Medieval",
+		"school": "Florida High School",
+		"hobbies": "Cooking",
+		"time": 1541571374
+	},
+	"a2eb53a2-a38f-49bb-b62f-e56904abc0fb": {
+		"fname": "Bob",
+		"lname": "Tucker",
+		"email": "btucker47@gmail.com",
+		"password": "123",
+		"department": "Social Studies",
+		"subject": "Medieval",
+		"school": "Florida High School",
+		"hobbies": "Cooking",
+		"time": 1541571375
+	},
+	"b22fe3e2-a38f-59bb-b62f-e56904abc0fb": {
+		"fname": "Samuel",
+		"lname": "Slater",
+		"email": "sslater7@gmail.com",
+		"password": "123",
+		"department": "Math",
+		"subject": "Geometry",
+		"school": "Trinity High School",
+		"hobbies": "Running",
+		"time": 1541571376
+	},
+	"eea12ba2-a38f-59bb-b62f-e56904abc0fb": {
+		"fname": "Sam",
+		"lname": "Parker",
+		"email": "sparker7@gmail.com",
+		"password": "123",
+		"department": "Math",
+		"subject": "Geometry",
+		"school": "Trinity High School",
+		"hobbies": "Running",
+		"time": 1541571377
+	},
+	"a12ec5a2-a38f-59bb-b62f-e56904abc0fb": {
+		"fname": "Reece",
+		"lname": "Kendrick",
+		"email": "rkendrick7@gmail.com",
+		"password": "123",
+		"department": "Science",
+		"subject": "Biology",
+		"school": "Dallas High School",
+		"hobbies": "Reading",
+		"time": 1541571378
+	},
+	"e5eea618-8f7e-4e9f-8662-6ca65ae92280": {
+		"fname": "HACC",
+		"lname": "Judge",
+		"email": "hacc@hawaii.gov",
+		"password": "123",
+		"department": "Science",
+		"subject": "Biology",
+		"school": "Dallas High School",
+		"hobbies": "Reading",
+		"time": 1541571379
+	},
+	"1ef23618-8f7e-4e9f-8662-6ca65ae92280": {
+		"fname": "Ally",
+		"lname": "Johnson",
+		"email": "ajohn@gmail.com",
+		"password": "123",
+		"department": "Social Studies",
+		"subject": "Medieval",
+		"school": "Trinity High School",
+		"hobbies": "Reading",
+		"time": 1541571380
+	},
+	"cb87ee41-7f0d-466b-9c9f-f2e76088cd5f": {
+		"fname": "John",
+		"lname": "Slater",
+		"email": "jslater13@gmail.com",
+		"password": "123456789",
+		"department": "Math",
+		"subject": "Alg 2",
+		"school": "Dallas High School",
+		"hobbies": "Reading",
+		"time": 1541623330
+	}
+}
