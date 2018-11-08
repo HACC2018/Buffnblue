@@ -25,12 +25,12 @@ When we connect teachers, we create the future. Edulime will make this a reality
 1. Go to http://eduli.me/
 2. Access the login page by pressing the "Login" button in the top right. Enter the email and password provided to access the account. Feel free to explore before logging in if you wish.
 
-Email: hacc@hawaii.gov
+Email: hacc@hawaii.gov  
 Password: 123
 
 ## Method 2 (Not Recommended)
 Alternatively, you can choose to run the website locally:
-$ git clone https://github.com/HACC2018/Buffnblue.git
-$ npm install 
-$ gulp production
+$ git clone https://github.com/HACC2018/Buffnblue.git  
+$ npm install  
+$ gulp production  
 $ npm run dev
